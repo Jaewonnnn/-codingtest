@@ -1,21 +1,20 @@
-import java.util.*;
 class Solution {
     public String solution(String s) {
         String answer = "";
-        int index = 0;
-        for(int i = 0; i<s.length(); i++){
-            char c = s.charAt(i);
-            if(c == ' '){ 
-                index = 0;
+        int idx = 0;
+        for(int i = 0; i < s.length(); i++){
+            if(s.charAt(i) == ' '){
+                idx = 0;
                 answer += ' ';
-                continue;
             }
-            if(index % 2 == 0){
-                answer += Character.toUpperCase(c);
-            } else if(index % 2 == 1){
-                answer += Character.toLowerCase(c);
+            else if(idx % 2 == 1){
+                answer += Character.toLowerCase(s.charAt(i));
+                idx++;
             }
-            index++;
+            else if(idx % 2 == 0){
+                answer += Character.toUpperCase(s.charAt(i));
+                idx++;
+            }
         }
         return answer;
     }
