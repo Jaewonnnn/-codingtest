@@ -2,13 +2,13 @@ import java.util.*;
 class Solution {
     public String solution(String s) {
         String answer = "";
-        int[] arr = new int[s.length()];
+        String[] arr = new String[s.length()];
         for(int i = 0; i<arr.length; i++){
-            arr[i] = s.charAt(i) - '0';
+            arr[i] = Character.toString(s.charAt(i));
         }
         Arrays.sort(arr);
         for(int i = arr.length -1; i >= 0; i--){
-            answer += (char)(arr[i] + '0');
+            answer += (arr[i]);
         }
         return answer;
     }
