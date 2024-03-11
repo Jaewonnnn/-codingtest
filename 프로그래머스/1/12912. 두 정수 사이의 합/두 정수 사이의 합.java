@@ -5,7 +5,11 @@ class Solution {
             for(int i = a; i <= b; i++){
                 answer += i;
             }
-        } else{
+        }
+        else if(a == b){
+            answer = a;
+        }
+        else{
             for(int i = b; i <= a; i++){
                 answer += i;
             }
