@@ -1,18 +1,19 @@
 import java.util.*;
 class Solution {
     public long solution(long n) {
-        long answer = 0;
-        String buf = Long.toString(n);
-        char[] temp = new char[buf.length()];
-        for(int i = 0; i < buf.length(); i++){
-            char c = buf.charAt(i);
-            temp[i] = c;
+        String num = Long.toString(n);
+        int[] arr = new int[num.length()];
+        
+        for(int i = 0; i<num.length(); i++){
+            arr[i] = Integer.parseInt(Character.toString(num.charAt(i)));
         }
-        Arrays.sort(temp);
-        buf = "";
-        for(int i = temp.length - 1; i >= 0; i--){
-           buf += temp[i];
+        
+        Arrays.sort(arr);
+        num = "";
+        
+        for(int i = arr.length - 1; i >= 0; i--){
+            num += arr[i];
         }
-        return Long.parseLong(buf);
+        return Long.parseLong(num);
     }
 }
