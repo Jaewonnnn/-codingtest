@@ -1,15 +1,7 @@
 import java.util.*;
 class Solution {
     public String solution(String[] seoul) {
-        String answer = "";
-        int index = 0;
-        for(int i = 0; i<seoul.length; i++){
-            if(seoul[i].equals("Kim")){
-                answer = "김서방은 " + Integer.toString(index) + "에 있다";
-                break;
-            }
-            else index++;
-        }
-        return answer;
+        int idx = Arrays.asList(seoul).indexOf("Kim");
+        return "김서방은 " + idx + "에 있다";
     }
 }
