@@ -3,14 +3,11 @@ class Solution {
         boolean answer = true;
         int pCount = 0;
         int yCount = 0;
-        String temp = s.toLowerCase();
-        for(int i = 0; i < s.length(); i++){
-            char c = temp.charAt(i);
-            if(c == 'p') pCount++;
-            else if (c == 'y') yCount++;
+        for(int i = 0; i<s.length(); i++){
+            if(s.charAt(i) == 'p' || s.charAt(i) == 'P') pCount++;
+            else if(s.charAt(i) == 'y' || s.charAt(i) == 'Y') yCount++;
         }
         if(pCount != yCount) answer = false;
-
         return answer;
     }
 }
