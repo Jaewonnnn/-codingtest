@@ -1,12 +1,10 @@
 class Solution {
     public int solution(int n) {
-        int answer = 0;
-        int min = Integer.MIN_VALUE;
-        for(int i = 1; i <= n; i++){
-            if(n % i == 1){
-                answer = i;
-                break;
-            }
+        int answer = 1;
+        
+        while(n > 1){
+            if(n % answer == 1) break;
+            answer++;
         }
         return answer;
     }
