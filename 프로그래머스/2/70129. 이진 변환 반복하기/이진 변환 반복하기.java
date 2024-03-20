@@ -6,9 +6,8 @@ class Solution {
         while(!s.equals("1")){
             zeroCount += countZero(s);
             s = deleteZero(s);
-            transCount++;
-            if(s.equals("1")) break;
             s = transBinary(oneCount(s));
+            transCount++;
         }
         answer[0] = transCount;
         answer[1] = zeroCount;
