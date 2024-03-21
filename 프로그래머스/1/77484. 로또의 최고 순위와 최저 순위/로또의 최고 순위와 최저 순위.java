@@ -20,26 +20,20 @@ class Solution {
                 }
             }
         }
-        System.out.printf("%d %d\n",count,zeroCount);
-        switch(count + zeroCount){
-            case 6: answer[0] = 1; break;
-            case 5: answer[0] = 2; break;
-            case 4: answer[0] = 3; break;
-            case 3: answer[0] = 4; break;
-            case 2: answer[0] = 5; break;
-            case 1: answer[0] = 6; break;
-            case 0: answer[0] = 6; break;
-        }
-        switch(count){
-            case 6: answer[1] = 1; break;
-            case 5: answer[1] = 2; break;
-            case 4: answer[1] = 3; break;
-            case 3: answer[1] = 4; break;
-            case 2: answer[1] = 5; break;
-            case 1: answer[1] = 6; break;
-            case 0: answer[1] = 6; break;
-        }
-
+        answer[0] = rank(count+zeroCount);
+        answer[1] = rank(count);
         return answer;
+    }
+    public int rank(int num){
+        switch(num){
+            case 6: return 1;
+            case 5: return 2;
+            case 4: return 3;
+            case 3: return 4;
+            case 2: return 5;
+            case 1: return 6;
+            case 0: return 6;
+        }
+        return 0;
     }
 }
